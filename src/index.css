@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1e293b;
+    background-color: #0b0f1a;
+  }
+}
+
+.font-display {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-mono-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.4);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.4);
+  border-radius: 9999px;
+}
+
+/* =========================================================
+   STORYBOOK 2D CHARACTER & PLAYGROUND ANIMATIONS
+   ========================================================= */
+
+/* Idle breathing & gentle bobbing */
+@keyframes kidBreathe {
+  0%, 100% {
+    transform: translateY(0px) scale(1, 1);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.01, 0.99);
+  }
+}
+
+.animate-kid-idle {
+  animation: kidBreathe 2.8s ease-in-out infinite;
+}
+
+/* Walking cycle for returning / queuing children */
+@keyframes kidWalk {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(-2.5deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(2.5deg);
+  }
+}
+
+.animate-kid-walk {
+  animation: kidWalk 0.7s ease-in-out infinite;
+}
+
+/* Joyful celebration victory jump */
+@keyframes kidCelebrateJump {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  40% {
+    transform: translateY(-12px) scale(1.05, 0.96) rotate(3deg);
+  }
+  70% {
+    transform: translateY(0px) scale(0.95, 1.05) rotate(-2deg);
+  }
+}
+
+.animate-kid-celebrate {
+  animation: kidCelebrateJump 1.4s ease-in-out infinite;
+}
+
+/* Realistic slide chute curved path traversal */
+@keyframes slideDownCurveRealistic {
+  /* Phase 1: Sitting atop the wooden launch deck, preparing */
+  0% {
+    left: 28%;
+    top: 24%;
+    transform: translate(-50%, -50%) rotate(-4deg) scale(0.96);
+  }
+  /* Phase 2: Pushing forward into the slide chute */
+  18% {
+    left: 36%;
+    top: 32%;
+    transform: translate(-50%, -50%) rotate(8deg) scale(0.98);
+  }
+  /* Phase 3: Fast acceleration through the central curved chute */
+  48% {
+    left: 52%;
+    top: 52%;
+    transform: translate(-50%, -50%) rotate(22deg) scale(1.03);
+  }
+  /* Phase 4: Swooshing through the lower curve */
+  75% {
+    left: 68%;
+    top: 70%;
+    transform: translate(-50%, -50%) rotate(12deg) scale(1.02);
+  }
+  /* Phase 5: Landing on the soft mat with a sweet cushion bounce */
+  90% {
+    left: 77%;
+    top: 76%;
+    transform: translate(-50%, -50%) rotate(2deg) scale(1.08, 0.92);
+  }
+  /* Phase 6: Settling gracefully on feet */
+  100% {
+    left: 77%;
+    top: 75%;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1, 1);
+  }
+}
+
+.animate-slide-down-realistic {
+  animation: slideDownCurveRealistic 1.25s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+/* Ladder climbing animation */
+@keyframes ladderClimb {
+  0% {
+    left: 17%;
+    top: 76%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  30% {
+    left: 17%;
+    top: 58%;
+    transform: translate(-50%, -50%) rotate(-3deg);
+  }
+  65% {
+    left: 17%;
+    top: 40%;
+    transform: translate(-50%, -50%) rotate(3deg);
+  }
+  100% {
+    left: 24%;
+    top: 24%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+.animate-ladder-climb {
+  animation: ladderClimb 1.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Gentle flag flutter */
+@keyframes flagFlutter {
+  0%, 100% {
+    transform: rotate(0deg) skewY(0deg);
+  }
+  50% {
+    transform: rotate(5deg) skewY(4deg);
+  }
+}
+
+.animate-flag {
+  animation: flagFlutter 1.8s ease-in-out infinite;
+  transform-origin: left center;
+}
+
+/* Soft floating cloud drift */
+@keyframes cloudDriftSlow {
+  0% {
+    transform: translateX(-15px);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+  100% {
+    transform: translateX(-15px);
+  }
+}
+
+.animate-cloud-slow {
+  animation: cloudDriftSlow 18s ease-in-out infinite;
+}
+
+/* CPU Core Pulse & Circuit glow */
+@keyframes cpuCircuitGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(142, 68, 255, 0.25), inset 0 0 15px rgba(142, 68, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(142, 68, 255, 0.5), inset 0 0 20px rgba(16, 185, 129, 0.2);
+  }
+}
+
+.animate-cpu-active {
+  animation: cpuCircuitGlow 2s ease-in-out infinite;
+}

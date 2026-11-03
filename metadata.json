@@ -1,0 +1,8 @@
+{
+  "name": "Round Robin — The Amusement Park Simulator",
+  "description": "Interactive dual-world educational simulator teaching Round Robin CPU scheduling through an intuitive amusement park playground slide analogy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
